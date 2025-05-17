@@ -1,0 +1,2 @@
+[main]
+    localhost ansible_ssh_port=16379 ansible_ssh_user=ubuntu ansible_connection=local ansible_ssh_pass=mypassword

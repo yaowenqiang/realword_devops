@@ -1,0 +1,15 @@
+- name: set hostname 
+  ansible.builtin.hostname:
+    name: do-pp.icu
+    use: systemd
+
+- name: localhost
+  ansible.builtin.lineinfile:
+    path: /etc/hosts
+    line: 127.0.0.1 locahost.localdomain localhost
+
+- name: do-pp.icu
+  ansible.builtin.lineinfile:
+    path: /etc/hosts
+    line: 127.0.0.1 do-pp.icu vps
+
