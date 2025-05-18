@@ -1,0 +1,15 @@
+- name: drop-in directory
+  ansible.builtin.file:
+    path: /etc/systemd/network/05-eth0.network.d
+    state: directory
+    owner: root
+    group: root
+    mode: "755"
+- name: copy custom config
+  ansible.builtin.copy:
+    dest: /etc/systemd/network/05-eth0-network.d/01-custom.conf
+    owner: root
+    group: root
+    backup: yes
+    mode: "755"
+  notify: restart systemd-networkd
